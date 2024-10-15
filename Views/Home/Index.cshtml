@@ -1,0 +1,13 @@
+@model IEnumerable<Movie>
+<div class="row">
+    <div class="col-md-3">
+        @* Kategori menüsünü yüklemek için Partial kullanımı *@
+        @* @await Html.PartialAsync("_menu", Model.Categories) *@
+
+        @await Component.InvokeAsync("CategoryMenu")
+    </div>
+    <div class="col-md-9">
+        @* Filmler listesini yüklemek için Partial kullanımı *@
+        @await Html.PartialAsync("_movies", Model)
+    </div>
+</div>
